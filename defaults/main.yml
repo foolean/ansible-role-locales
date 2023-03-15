@@ -1,0 +1,15 @@
+# Copyright (c) 2023, Bennett Samowich <bennett@foolean.org>
+# All rights reserved
+# SPDX short identifier: BSD-3-Clause
+---
+
+# locales_lang
+#      The default language setting for this system
+#      (default: en_US.UTF-8)
+locales_lang: 'en_US.UTF-8'
+
+# locales_locales
+#      Array of locales to be installed
+#      (default: [ en_US.UTF-8 UTF-8 ])
+locales_locales:
+    - 'en_US.UTF-8 UTF-8'

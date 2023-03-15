@@ -1,0 +1,9 @@
+# Copyright (c) 2023, Bennett Samowich <bennett@foolean.org>
+# All rights reserved
+# SPDX short identifier: BSD-3-Clause
+---
+
+- name: Generate locales (debian)
+  become: true
+  ansible.builtin.command:
+    cmd: 'locale-gen'

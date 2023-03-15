@@ -1,0 +1,24 @@
+# Copyright (c) 2023, Bennett Samowich <bennett@foolean.org>
+# All rights reserved
+# SPDX short identifier: BSD-3-Clause
+---
+
+# We put the entire role in a block so we can create
+# a role specific tag, which saves the caller from
+# having to do so in their playbook.
+- name: Role foolean/locales
+  block:
+
+  - name: Set locales on Debian based systems
+    ansible.builtin.import_tasks: 'debian.yml'
+    when:
+      - ansible_os_family|lower == 'debian'
+
+  - name: Set locales on RedHat based systems
+    ansible.builtin.import_tasks: 'redhat.yml'
+    when:
+      - ansible_os_family|lower == 'redhat.yml'
+
+  # Tags to be applied to this role (block)
+  tags:
+    - 'role_foolean_locales'
